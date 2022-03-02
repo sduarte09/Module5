@@ -35,14 +35,14 @@
           
           
             
-              <div class="bk-root" id="4cb8b7a7-0c65-4de3-8d90-ca75922051ad" data-root-id="1261"></div>
+              <div class="bk-root" id="e9762b44-0125-4b42-8786-6d2a7c01f8c6" data-root-id="1008"></div>
             
           
         
       
       
-        <script type="application/json" id="1262">
-          {"1e8767e3-c65b-484e-bee8-6fc6d2fc92f9":{"defs":[],"roots":{"references":[{"attributes":{"children":[{"id":"1255"},{"id":"1256"},{"id":"1257"},{"id":"1258"},{"id":"1259"}]},"id":"1261","type":"Column"},{"attributes":{"end":1,"start":0.1,"step":0.05,"title":"Pipe_Diameter(m)","value":0.15},"id":"1257","type":"Slider"},{"attributes":{"end":0.1,"start":0.01,"step":0.001,"title":"Friction_coefficient","value":0.01},"id":"1258","type":"Slider"},{"attributes":{"end":200,"start":50,"step":5,"title":"Pipe_Length(m)","value":100},"id":"1256","type":"Slider"},{"attributes":{"end":10,"start":1,"step":0.1,"title":"Tank_Height(m)","value":5},"id":"1255","type":"Slider"},{"attributes":{"button_type":"success","icon":null,"js_event_callbacks":{"button_click":[{"id":"1260"}]},"label":"Compute Velocity"},"id":"1259","type":"Button"},{"attributes":{"args":{"sliderD":{"id":"1257"},"sliderH1":{"id":"1255"},"sliderL":{"id":"1256"},"sliderf":{"id":"1258"}},"code":"\n    var H1=sliderH1.value;\n    var L= sliderL.value;\n    var D= sliderD.value;\n    var f= sliderf.value;\n    var vel=Math.sqrt((2*9.81*H1)/(1+f*(L/D)));\n    alert(vel)\n"},"id":"1260","type":"CustomJS"}],"root_ids":["1261"]},"title":"Bokeh Application","version":"2.4.2"}}
+        <script type="application/json" id="1009">
+          {"a77135f5-07ae-4536-8212-0aa3e7ccc642":{"defs":[],"roots":{"references":[{"attributes":{"end":0.1,"start":0.01,"step":0.001,"title":"Friction_coefficient","value":0.01},"id":"1005","type":"Slider"},{"attributes":{"children":[{"id":"1002"},{"id":"1003"},{"id":"1004"},{"id":"1005"},{"id":"1006"}]},"id":"1008","type":"Column"},{"attributes":{"end":1,"start":0.1,"step":0.05,"title":"Pipe_Diameter(m)","value":0.15},"id":"1004","type":"Slider"},{"attributes":{"end":10,"start":1,"step":0.1,"title":"Tank_Height(m)","value":5},"id":"1002","type":"Slider"},{"attributes":{"end":200,"start":50,"step":5,"title":"Pipe_Length(m)","value":100},"id":"1003","type":"Slider"},{"attributes":{"args":{"sliderD":{"id":"1004"},"sliderH1":{"id":"1002"},"sliderL":{"id":"1003"},"sliderf":{"id":"1005"}},"code":"\n    var H1=sliderH1.value;\n    var L= sliderL.value;\n    var D= sliderD.value;\n    var f= sliderf.value;\n    var vel=Math.sqrt((2*9.81*H1)/(1+f*(L/D)));\n    alert(vel)\n"},"id":"1007","type":"CustomJS"},{"attributes":{"button_type":"success","icon":null,"js_event_callbacks":{"button_click":[{"id":"1007"}]},"label":"Compute Velocity"},"id":"1006","type":"Button"}],"root_ids":["1008"]},"title":"Bokeh Application","version":"2.4.2"}}
         </script>
         <script type="text/javascript">
           (function() {
@@ -51,8 +51,8 @@
                 (function(root) {
                   function embed_document(root) {
                     
-                  const docs_json = document.getElementById('1262').textContent;
-                  const render_items = [{"docid":"1e8767e3-c65b-484e-bee8-6fc6d2fc92f9","root_ids":["1261"],"roots":{"1261":"4cb8b7a7-0c65-4de3-8d90-ca75922051ad"}}];
+                  const docs_json = document.getElementById('1009').textContent;
+                  const render_items = [{"docid":"a77135f5-07ae-4536-8212-0aa3e7ccc642","root_ids":["1008"],"roots":{"1008":"e9762b44-0125-4b42-8786-6d2a7c01f8c6"}}];
                   root.Bokeh.embed.embed_items(docs_json, render_items);
                 
                   }
