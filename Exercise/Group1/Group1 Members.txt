@@ -1,4 +1,0 @@
-No.	Name			St.Num		Locker.No	
-1.	Md Abdul Awal Islam     1076918         349
-2.	Mutaz Abdelaziz 	1082670		361
-3.	Kabwe Kelvin            1073662         363
