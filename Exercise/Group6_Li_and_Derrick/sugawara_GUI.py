@@ -6,15 +6,19 @@ Created on Tue Mar  1 20:18:37 2022
 """
 from __future__ import division
 from cProfile import label
+from cmath import exp
 from bokeh.layouts import row,column
 from bokeh.models import Div, TextInput,Button, FileInput, Slider
-from bokeh.io import output_file, show
+from bokeh.io import output_file, show, export_png
 from bokeh.plotting import figure, show,curdoc
 import numpy as np
 import scipy.optimize as opt
 import pandas as pd
 import os, sys
+
+from sympy import E
 os.chdir(sys.path[0])
+
 # output_file("my_GUI.html")
 
 
@@ -422,10 +426,15 @@ def calculate_discharge():
     x = np.arange(0,len(df_prec)*int(dt_slider_input.value),int(dt_slider_input.value))
     p.line(x,Q_arr,legend_label = 'slope of bed level', line_width = 2)
     print('Done.')
-    button_save.disabled = False
-def save_res():
+    button_save_data.disabled = False
+    button_save_img.disabled = False
+def save_data():
     print('Save Results....')
-    np.savetxt('Exercise/Group6_Li_and_Derrick/sugawara_res.txt',np.array([x,Q_arr]).T)
+    np.savetxt('Exercise/Group6_Li_and_Derrick/sugawara_data.txt',np.array([x,Q_arr]).T)
+    print('Done.')
+def save_img():
+    print('Plot...')
+    export_png(p, filename = 'Exercise/Group6_Li_and_Derrick/sugawara_plot.png')
     print('Done.')
 #######################################################################################
 
@@ -446,17 +455,24 @@ button_calculate = Button(label="Calculate and Display",
     margin=[5,5,5,5]
 )
 
-button_save = Button(label="Save Results",
+button_save_data = Button(label="Save Data",
+    width = 150,
+    height = 30,
+    disabled = True,
+    margin=[5,5,5,50]
+)
+button_save_img = Button(label="Save Plot",
     width = 150,
     height = 30,
     disabled = True,
     margin=[5,5,5,50]
 )
 
-buttons = row(button_calculate,button_save,margin=[30,5,5,450])
+buttons = row(button_calculate,button_save_data, button_save_img,margin=[30,5,5,330])
 
 button_calculate.on_click(calculate_discharge)
-button_save.on_click(save_res)
+button_save_data.on_click(save_data)
+button_save_img.on_click(save_img)
 # show result
 curdoc().add_root(column(top,main,buttons))
 

@@ -8,7 +8,7 @@ from cProfile import label
 from turtle import left
 from bokeh.layouts import row,column
 from bokeh.models import Div, TextInput, Button, Slider
-from bokeh.io import output_file, show
+from bokeh.io import output_file, show, export_png
 from bokeh.plotting import figure, show,curdoc
 import numpy as np
 
@@ -163,15 +163,21 @@ def BWC():
     p.line(x,hg,legend_label = 'slope of bed level', line_width = 2)
     p.line(x, hw,legend_label = 'Water Level', line_width = 2)
     print('Done.')
-    button_save.disabled = False
+    button_save_data.disabled = False
+    button_save_img.disabled = False
 
 
     
 
-def save_res():
+def save_data():
     print('Save...')
     res = np.array([x,hg,hw]).T
-    np.savetxt('Exercise/Group6_Li_and_Derrick/BWC_res.txt',res)
+    np.savetxt('Exercise/Group6_Li_and_Derrick/BWC_data.txt',res)
+    print('Done.')
+
+def save_img():
+    print('Plot...')
+    export_png(p, filename='Exercise/Group6_Li_and_Derrick/BWC_plot.png')
     print('Done.')
 ###################################################################
 
@@ -193,16 +199,21 @@ button_calculate = Button(label= 'Calculate and Display',
 )
 
 
-button_save = Button(label = "Save Results",
+button_save_data = Button(label = "Save Data",
     width = 150,
     height = 30,
     margin=[5,5,5,30],
     disabled= True,)
-
+button_save_img = Button(label = "Save Plot",
+    width = 150,
+    height = 30,
+    margin=[5,5,5,30],
+    disabled= True,)
 button_calculate.on_click(BWC)
-button_save.on_click(save_res)
+button_save_data.on_click(save_data)
+button_save_img.on_click(save_img)
 
-buttons = row(button_calculate,button_save, margin=[30,5,5,250])
+buttons = row(button_calculate,button_save_data, button_save_img, margin=[30,5,5,180])
 
 
 
