@@ -405,9 +405,9 @@ def calculate_discharge():
     p.renderers = []
     print('on_click: run')
     print(prec_file_input.filename)
-    df_prec = pd.read_excel(prec_file_input.filename)
+    df_prec = pd.read_excel('Exercise/Group6_Li_and_Derrick/'+prec_file_input.filename)
     print(evap_file_input.filename)
-    df_evap = pd.read_excel(evap_file_input.filename)
+    df_evap = pd.read_excel('Exercise/Group6_Li_and_Derrick/'+evap_file_input.filename)
     
     st = [float(S1_text_input.value),float(S2_text_input.value)]
     print(f'st: {st}')
@@ -425,7 +425,7 @@ def calculate_discharge():
     button_save.disabled = False
 def save_res():
     print('Save Results....')
-    np.savetxt('sugawara_res.txt',np.array([x,Q_arr]).T)
+    np.savetxt('Exercise/Group6_Li_and_Derrick/sugawara_res.txt',np.array([x,Q_arr]).T)
     print('Done.')
 #######################################################################################
 

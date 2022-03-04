@@ -6,8 +6,10 @@ File BWC_GUI.py is the code of BWC.
         - Click "Calculte and Display" (The graph will show in right hand side)
         - Save Results (The results will be saved in a txt file named 'BWC_res.txt' in the same folder as code file.)
 
+
+
 File sugawara_GUI.py is the code of sugawara.
-File prec.xlsx and evap.xlsx are the defalut inputs of precipitation and evaporation. Seclet other files is also ok.
+File prec.xlsx and evap.xlsx are the defalut inputs of precipitation and evaporation. Seclet other files is also ok. But it should be placed in the same folder as code file.
     File prec.xlsx includes a column named 'prec'.
     File evap.xlsx includes a column named 'evap'.
 

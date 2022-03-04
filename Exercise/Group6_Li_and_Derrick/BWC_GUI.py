@@ -171,7 +171,7 @@ def BWC():
 def save_res():
     print('Save...')
     res = np.array([x,hg,hw]).T
-    np.savetxt('BWC_res.txt',res)
+    np.savetxt('Exercise/Group6_Li_and_Derrick/BWC_res.txt',res)
     print('Done.')
 ###################################################################
 
