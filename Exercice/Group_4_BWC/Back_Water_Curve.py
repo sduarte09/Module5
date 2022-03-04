@@ -61,5 +61,5 @@ def plot_function():
 Run_Button.on_click(plot_function)
 curdoc().add_root(column(River_W, River_L, Slope, h_0, Chezy_C, Q_0, Dx, Run_Button, p))
 
-# bokeh serve --show Assignment.py
+# bokeh serve --show Back_Water_Curve.py
 # http://localhost:5006/Assignment
