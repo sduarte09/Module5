@@ -11,7 +11,7 @@ File prec.xlsx and evap.xlsx are the defalut inputs of precipitation and evapora
     File prec.xlsx includes a column named 'prec'.
     File evap.xlsx includes a column named 'evap'.
 
-    Step:
+    Steps:
         - Seclet prec and evap input data (If you do not Seclet these files, defalut files will be used.)
         - Input other data.
         - Click "Calculte and Display" (The graph will show in right hand side)
